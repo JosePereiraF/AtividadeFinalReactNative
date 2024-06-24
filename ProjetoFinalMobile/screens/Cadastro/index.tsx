@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
-
+import { Pessoa, addCliente } from "../../services/Cliente";
 
 export default function Cadastro(){
     const [nome, setNome] = useState("");
@@ -10,14 +10,11 @@ export default function Cadastro(){
     const [senha, setSenha] = useState("");
     const [cep, setCep] = useState("");
 
-    const [cliente, setCliente] = useState({
-      nome: nome,
-      telefone: telefone,
-      email: email,
-      cpf: cpf,
-      senha: senha,
-      cep: cep,
-    });
+    
+    function adicionar() {
+      const clienteSave: Pessoa = { nome, cpf, email, senha, telefone };
+      addCliente(clienteSave, cep)   
+    }
 
 
     return (
@@ -72,7 +69,7 @@ export default function Cadastro(){
             onChangeText={(text) => setCep(text)}
             />
 
-        <TouchableOpacity style={styles.button} >
+        <TouchableOpacity style={styles.button} onPress={adicionar}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
 
