@@ -11,9 +11,9 @@ export default function Cadastro(){
     const [cep, setCep] = useState("");
 
     
-    function adicionar() {
-      const clienteSave: Pessoa = { nome, cpf, email, senha, telefone };
-      addCliente(clienteSave, cep)   
+    function adicionar ():Pessoa {
+      const clienteSave: Pessoa = { nome, cpf, email, senha, telefone }; 
+      return clienteSave;
     }
 
 
@@ -69,7 +69,7 @@ export default function Cadastro(){
             onChangeText={(text) => setCep(text)}
             />
 
-        <TouchableOpacity style={styles.button} onPress={adicionar}>
+        <TouchableOpacity style={styles.button} onPress={()=>addCliente(adicionar(),cep)}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
 
