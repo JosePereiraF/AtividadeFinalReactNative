@@ -1,7 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
+import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
+  useEffect(()=>{
+    
+  })
+
+  
   return (
     <View style={styles.container}>
       <Text>Teste de Branch</Text>
