@@ -10,6 +10,15 @@ export default function Cadastro(){
     const [senha, setSenha] = useState("");
     const [cep, setCep] = useState("");
 
+    const [cliente, setCliente] = useState({
+      nome: nome,
+      telefone: telefone,
+      email: email,
+      cpf: cpf,
+      senha: senha,
+      cep: cep,
+    });
+
 
     return (
         <View style={styles.container}>
