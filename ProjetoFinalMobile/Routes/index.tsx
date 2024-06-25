@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomDrawer from '../components/CustomDrawer';
 import Avaliacao from '../screens/Avalicao';
@@ -18,6 +17,9 @@ export default function Routes() {
         screenOptions={{
           drawerInactiveTintColor: 'gray',
           drawerActiveTintColor: '#00ff',
+          drawerContentContainerStyle: {
+            alignItems: 'center',
+          },
         }}
       >
         <Drawer.Screen name='Avaliacao' component={Avaliacao} />
