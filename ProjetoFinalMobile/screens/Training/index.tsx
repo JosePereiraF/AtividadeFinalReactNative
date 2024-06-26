@@ -26,7 +26,7 @@ export default function Training() {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={() => setOpen(!open)}>
+          <TouchableOpacity style={styles.card} onPress={() => setOopen(!oopen)}>
             <Image
               source={require("../../assets/intermediario.png")}
               style={{ width: 340, height: 185, borderRadius: 15, }}
@@ -35,7 +35,7 @@ export default function Training() {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={() => setOpen(!open)}>
+          <TouchableOpacity style={styles.card} onPress={() => setOoopen(!ooopen)}>
             <Image
               source={require("../../assets/avancado.png")}
               style={{ width: 340, height: 185, borderRadius: 15, }}

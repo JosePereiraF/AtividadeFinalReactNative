@@ -59,7 +59,7 @@ export default function CardLista() {
                         <Text style={styles.cardText}>Triceps Corda                          3 x 10</Text>
                     </TouchableOpacity>
 
-                    <Text style={styles.cardNome}>TREINO A</Text>
+                    <Text style={styles.cardNome}>TREINO C</Text>
 
                     <TouchableOpacity style={styles.card} onPress={() => Linking.openURL('https://www.youtube.com/shorts/8V2SwkHTLek')}>
                         <Text style={styles.cardText}>Agachamento                          3 x 10</Text>
