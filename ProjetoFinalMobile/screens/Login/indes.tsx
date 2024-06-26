@@ -1,12 +1,27 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
-import { Pessoa, addCliente } from "../../services/Cliente";
+import { Pessoa, PessoaLog, addCliente, LogCliente } from "../../services/Cliente";
+
+
 
 export default function Login() {
 
   const [email, setEmail] = useState("");
-
   const [senha, setSenha] = useState("");
+  const [logado, setLogado] = useState("");
+
+  function logar() { 
+    const clienteLog : PessoaLog = {email, senha}
+    LogCliente(clienteLog)
+    .then((response)=>{
+      setLogado(response.data.nome);
+    })
+    .catch((erro)=>{
+      console.error(erro);
+      throw erro;
+    })
+  } 
+
 
   return (
     <View style={styles.container}>
@@ -28,9 +43,10 @@ export default function Login() {
         value={senha}
         onChangeText={(text) => setSenha(text)}
       />
-      <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Cadastrar</Text>
-      </TouchableOpacity>
+
+       <TouchableOpacity style={styles.button} onPress={logar}>
+        <Text style={styles.buttonText}>Login</Text>
+      </TouchableOpacity> 
     </View>
   );
 }
