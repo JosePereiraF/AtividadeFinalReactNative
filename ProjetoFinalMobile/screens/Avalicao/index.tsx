@@ -5,6 +5,7 @@ import { Personal } from '../../Context/personalContext';
 import CardPersonal from '../../components/cardPersonal';
 import { db } from '../../fireBaseConnection';
 import MarcarConsulta, { IMarcarConsulta } from '../../components/modalMarcarConsulta';
+import { styles } from './styles';
 
 
 export default function Avaliacao() {
@@ -54,14 +55,3 @@ export default function Avaliacao() {
    
   )
 }
-const styles = StyleSheet.create({
-  scrool: {
-    flex: 1,
-    width:"100%",
-  },
-  container:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center'
-  }
-});
