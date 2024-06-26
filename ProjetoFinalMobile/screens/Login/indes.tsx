@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
-import { Pessoa, PessoaLog, addCliente, LogCliente } from "../../services/Cliente";
+import { PessoaLog, LogCliente } from "../../services/Cliente";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 
@@ -10,11 +11,12 @@ export default function Login() {
   const [senha, setSenha] = useState("");
   const [logado, setLogado] = useState("");
 
-  function logar() { 
+   function logar() { 
     const clienteLog : PessoaLog = {email, senha}
     LogCliente(clienteLog)
     .then((response)=>{
       setLogado(response.data.nome);
+       AsyncStorage.setItem("logado",response.data.nome)
     })
     .catch((erro)=>{
       console.error(erro);

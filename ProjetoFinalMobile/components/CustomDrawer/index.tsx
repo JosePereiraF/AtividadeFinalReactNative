@@ -1,7 +1,16 @@
 import { View, Text, Image } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {DrawerContentScrollView, DrawerItemList} from '@react-navigation/drawer'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 export default function CustomDrawer(props) {
+  const [nomeLogado, setNomeLogado]= useState("");
+  useEffect(()=>{
+    const dadosUsuario = async ()=>{
+      const usuarioLogado = await AsyncStorage.getItem("logado");
+      usuarioLogado!=null?setNomeLogado(usuarioLogado):"nulo"
+    }
+    dadosUsuario();
+  },[nomeLogado])
   return (
     <DrawerContentScrollView>
         <View
@@ -18,7 +27,7 @@ export default function CustomDrawer(props) {
             color:"#000",
             marginVertical: 15,
             }}>
-                Bem vindo!
+                Bem vindo, {nomeLogado}!
         </Text>
         </View>
         <DrawerItemList {...props}/>

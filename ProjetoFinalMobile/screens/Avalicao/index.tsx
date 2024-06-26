@@ -1,15 +1,17 @@
-import { View, Text, FlatList, ScrollView,StyleSheet } from 'react-native'
+import { View, Text, FlatList, ScrollView,StyleSheet, Modal, Button } from 'react-native'
 import React, { useEffect, useState } from 'react'
-// import { listaPersonal } from '../../Context/personalContext'
-import { carregarPersonal } from '../../Context/personalContext'
 import { collection, onSnapshot } from 'firebase/firestore';
 import { Personal } from '../../Context/personalContext';
 import CardPersonal from '../../components/cardPersonal';
 import { db } from '../../fireBaseConnection';
-export default function Avaliacao() {
-  const[listaPersonal,setListaPersonal]= useState<Personal[]>([]);
+import MarcarConsulta, { IMarcarConsulta } from '../../components/modalMarcarConsulta';
 
-  // carregarPersonal();
+
+export default function Avaliacao() {
+  const[activeModal,setActiveModal]= useState(false);
+  const[listaPersonal,setListaPersonal]= useState<Personal[]>([]);
+  const [consulta,setConsulta] = useState<IMarcarConsulta>({dataMarcada:"",nomePersonal:"",nomeUsuario:"",tipoConsulta:"",valor:0});
+
   useEffect(()=>{
     const personais = onSnapshot(collection(db,"Personais"),(snapshot)=>{
         const personaisList:any= [];//sera que funciona?
@@ -20,6 +22,7 @@ export default function Avaliacao() {
     })
     return ()=> personais();
 },[])
+
   return (
     <ScrollView style={styles.scrool}>
 
@@ -28,12 +31,24 @@ export default function Avaliacao() {
         data={listaPersonal}
         scrollEnabled={false}
         renderItem={({item})=>{
-          return <CardPersonal item={item}/>
+          return <CardPersonal item={item} setActiveModal={setActiveModal} consulta={setConsulta}/>
         }}
         />
       </View>
+        {activeModal&&
+      <Modal visible={activeModal} animationType='slide'>
+        <MarcarConsulta 
+        nomeUsuario={consulta.nomeUsuario}
+        dataMarcada={consulta.dataMarcada}
+        nomePersonal={consulta.nomePersonal}
+        tipoConsulta={consulta.tipoConsulta}
+        valor={consulta.valor}
+        setActiveModal={setActiveModal}
+        />
+        
+      </Modal>
+        }
     </ScrollView>
-      
       
 
    
