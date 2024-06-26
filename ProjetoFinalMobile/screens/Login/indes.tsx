@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import { Text, View, StyleSheet, TextInput, TouchableOpacity, Image } from "react-native";
 import { PessoaLog, LogCliente } from "../../services/Cliente";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { styles } from '../Login/styles';
@@ -28,7 +28,10 @@ export default function Login() {
   } 
       return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Cadastre-se informando seus dados abaixo!</Text>
+      <Image 
+      style={styles.titulo} 
+      source={require("../../assets/log.png")}
+      />
 
       <TextInput
         style={styles.input}
@@ -49,7 +52,7 @@ export default function Login() {
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity> 
       
-       <Text style={styles.buttonText} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
+       <Text style={styles.buttonTextt} onPress={() => navigation.navigate('Cadastro')}>Cadastre-se</Text>
  
     </View>
   

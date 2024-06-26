@@ -4,40 +4,42 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 40,
+    alignItems:'center',
   },
-  button: {
-    backgroundColor: "blue",
-    marginTop: 30,
+  titulo: {
+    textAlign: "center",
+    marginTop:1,
+  },
+  input: {
+    borderWidth: 1,
+    marginTop:1,
+    width:300,
     marginLeft: 8,
     marginRight: 8,
-    borderRadius: 30,
+    marginBottom: 8,
+    borderRadius: 8,
+  },
+  button: {
+    backgroundColor: "#000",
+    marginTop: 2,
+    width:80,
+    marginLeft: 8,
+    marginRight: 8,
+    borderRadius: 15,
   },
   buttonText: {
     padding: 8,
     color: "#FFF",
     textAlign: "center",
   },
-  label: {
-    color: "#000",
-    fontSize: 18,
-    marginBottom: 4,
-    marginLeft: 8,
-  },
-  input: {
-    borderWidth: 1,
-    marginLeft: 8,
-    marginRight: 8,
-    marginBottom: 8,
-    borderRadius: 8,
-  },
   list: {
     marginTop: 8,
     marginLeft: 8,
     marginRight: 8,
   },
-  titulo: {
-    textAlign: "center",
-    fontSize: 25,
-    marginBottom: 30,
+  buttonTextt:{
+    color: "#000",
+    marginTop: 8,
+    fontSize:15,
   },
 });

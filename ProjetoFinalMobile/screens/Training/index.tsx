@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ImageBackground, Modal, Button } from 'react-native';
+import { View, Text, TouchableOpacity, ImageBackground, Modal, Button, Image } from 'react-native';
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import CardList from '../../components/cardList';
@@ -18,31 +18,32 @@ export default function Training() {
       <View style={styles.container}>
         <View style={styles.cards}>
           <TouchableOpacity style={styles.card} onPress={() => setOpen(!open)}>
-            <ImageBackground
+            <Image
               source={require("../../assets/basicc.png")}
-              style={{ width: '100%', height: 185 }}
-              resizeMode="contain"
-              resizeMethod="resize"
+              style={{ width: 340, height: 185, borderRadius: 15, }}
+              resizeMode="stretch"
+              resizeMethod="auto"
             />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={() => setOopen(!oopen)}>
-            <ImageBackground
+          <TouchableOpacity style={styles.card} onPress={() => setOpen(!open)}>
+            <Image
               source={require("../../assets/intermediario.png")}
-              style={{ width: '100%', height: 185 }}
-              resizeMode="contain"
-              resizeMethod="resize"
+              style={{ width: 340, height: 185, borderRadius: 15, }}
+              resizeMode="stretch"
+              resizeMethod="auto"
             />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.card} onPress={() => setOoopen(!ooopen)}>
-            <ImageBackground
+          <TouchableOpacity style={styles.card} onPress={() => setOpen(!open)}>
+            <Image
               source={require("../../assets/avancado.png")}
-              style={{ width: '100%', height: 185 }}
-              resizeMode="contain"
-              resizeMethod="resize"
+              style={{ width: 340, height: 185, borderRadius: 15, }}
+              resizeMode="stretch"
+              resizeMethod="auto"
             />
           </TouchableOpacity>
+    
         </View>
       </View>
       

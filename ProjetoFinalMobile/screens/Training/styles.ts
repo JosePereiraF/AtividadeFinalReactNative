@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   },
   card: {
     height: 185,
-    backgroundColor: '#121212',
+    // backgroundColor: '#121212',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 15,

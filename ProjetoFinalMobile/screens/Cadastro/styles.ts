@@ -4,27 +4,31 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 40,
+        alignItems:'center',
     },
+    titulo: {
+        textAlign: "center",
+        marginTop:1,
+        width:190,
+        height:190,
+      },
     button: {
-        backgroundColor: "blue",
-        marginTop: 30,
+        backgroundColor: "#000",
+        width:120,
+        marginTop: 10,
         marginLeft: 8,
         marginRight: 8,
-        borderRadius: 30,
+        borderRadius: 15,
     },
     buttonText: {
         padding: 8,
         color: "#FFF",
         textAlign: "center",
     },
-    label: {
-        color: "#000",
-        fontSize: 18,
-        marginBottom: 4,
-        marginLeft: 8,
-    },
     input: {
         borderWidth: 1,
+        width:330,
+        height:35,
         marginLeft: 8,
         marginRight: 8,
         marginBottom: 8,
@@ -35,9 +39,9 @@ export const styles = StyleSheet.create({
         marginLeft: 8,
         marginRight: 8,
     },
-    titulo: {
-        textAlign: "center",
-        fontSize: 25,
-        marginBottom: 30,
-    },
+    buttonTextt:{
+        color: "#000",
+        marginTop: 8,
+        fontSize:15,
+      },
 });

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Text, View, TextInput, TouchableOpacity } from "react-native";
+import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
 import { Pessoa, addCliente } from "../../services/Cliente";
 import  {styles}  from "../Cadastro/styles";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Cadastro() {
     const [nome, setNome] = useState("");
@@ -10,6 +11,7 @@ export default function Cadastro() {
     const [cpf, setCpf] = useState("");
     const [senha, setSenha] = useState("");
     const [cep, setCep] = useState("");
+    const navigation = useNavigation();
 
     function adicionar(): Pessoa {
         const clienteSave: Pessoa = { nome, cpf, email, senha, telefone };
@@ -18,11 +20,14 @@ export default function Cadastro() {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.titulo}>Cadastre-se informando seus dados abaixo!</Text>
+           <Image 
+      style={styles.titulo} 
+      source={require("../../assets/log.png")}
+      />
 
             <TextInput
                 style={styles.input}
-                placeholder=" Nome..."
+                placeholder=" Nome"
                 value={nome}
                 onChangeText={(text) => setNome(text)}
             />
@@ -65,6 +70,7 @@ export default function Cadastro() {
             <TouchableOpacity style={styles.button} onPress={() => addCliente(adicionar(), cep)}>
                 <Text style={styles.buttonText}>Cadastrar</Text>
             </TouchableOpacity>
+            <Text style={styles.buttonTextt} onPress={() => navigation.navigate('Login')}>Login</Text>
         </View>
     );
 }
