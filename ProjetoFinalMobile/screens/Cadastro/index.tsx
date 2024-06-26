@@ -67,7 +67,7 @@ export default function Cadastro() {
                 onChangeText={(text) => setCep(text)}
             />
 
-            <TouchableOpacity style={styles.button} onPress={() => addCliente(adicionar(), cep)}>
+            <TouchableOpacity style={styles.button} onPress={() => addCliente(adicionar(), cep) }>
                 <Text style={styles.buttonText}>Cadastrar</Text>
             </TouchableOpacity>
             <Text style={styles.buttonTextt} onPress={() => navigation.navigate('Login')}>Login</Text>

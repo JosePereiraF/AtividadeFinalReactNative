@@ -20,6 +20,9 @@ export default function Login() {
     .then((response)=>{
       setLogado(response.data.nome);
        AsyncStorage.setItem("logado",response.data.nome)
+       navigation.navigate("Avaliacao");
+       setEmail("");
+       setSenha("");
     })
     .catch((erro)=>{
       console.error(erro);

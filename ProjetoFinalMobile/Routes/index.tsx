@@ -3,7 +3,6 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import CustomDrawer from '../components/CustomDrawer';
 import Avaliacao from '../screens/Avalicao';
 import Cadastro from '../screens/Cadastro';
-import Consulta from '../screens/Consulta';
 import Training from '../screens/Training';
 import Login from '../screens/Login/indes';
 
@@ -25,7 +24,6 @@ export default function Routes() {
       <Drawer.Screen name='Login' component= {Login} />
       <Drawer.Screen name='Avaliacao' component={Avaliacao} />
       <Drawer.Screen name='Treino' component={Training} />
-      <Drawer.Screen name='Consulta' component={Consulta} />
       <Drawer.Screen name='Cadastro' component={Cadastro} />
     </Drawer.Navigator>
   );

@@ -12,6 +12,9 @@ interface PersonalProps{
 }
 
 export default function CardPersonal({item, setActiveModal,consulta}:PersonalProps) {
+  const dataInicial = new Date();
+  dataInicial.setDate(dataInicial.getDate()+3);
+  const [data,setData]= useState(dataInicial);
   const [nomeLogado, setNomeLogado]= useState("");
   function handleModal(){
     setActiveModal(true)
@@ -19,7 +22,7 @@ export default function CardPersonal({item, setActiveModal,consulta}:PersonalPro
       nomeUsuario:nomeLogado,
       tipoConsulta:"Avaliação",
       valor:150,
-      dataMarcada:"ola"}
+      dataMarcada:data.toLocaleDateString()}
      consulta(dados);
   }
 useEffect(()=>{
