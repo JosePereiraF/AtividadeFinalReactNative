@@ -18,7 +18,7 @@ export default function TreinoFeminino() {
         <View style={styles.cards}>
           <TouchableOpacity style={styles.card} onPress={() => setEasy(!easy)}>
             <Image
-              source={require("../../assets/log.png")} //adicionar uma imagem treino feminino basico
+              source={require("../../assets/BasicoF.png")} //adicionar uma imagem treino feminino basico
               style={{ width: 340, height: 185, borderRadius: 15, margin:10, }}
               resizeMode="stretch"
               resizeMethod="auto"
@@ -27,7 +27,7 @@ export default function TreinoFeminino() {
 
           <TouchableOpacity style={styles.card} onPress={() => setMedium(!medium)}>
             <Image
-              source={require("../../assets/log.png")} //adicionar uma imagem treino feminino intermediario
+              source={require("../../assets/IntermediarioF.png")} //adicionar uma imagem treino feminino intermediario
               style={{ width: 340, height: 185, borderRadius: 15, }}
               resizeMode="stretch"
               resizeMethod="auto"
@@ -36,7 +36,7 @@ export default function TreinoFeminino() {
 
           <TouchableOpacity style={styles.card} onPress={() => setAdvanced(!advanced)}>
             <Image
-              source={require("../../assets/log.png")} //adicionar uma imagem treino feminino avançado
+              source={require("../../assets/AvançadoF.png")} //adicionar uma imagem treino feminino avançado
               style={{ width: 340, height: 185, borderRadius: 15, }}
               resizeMode="stretch"
               resizeMethod="auto"
