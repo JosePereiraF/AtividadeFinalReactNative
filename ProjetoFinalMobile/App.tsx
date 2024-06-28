@@ -1,15 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Avaliacao from './screens/Avalicao';
+// import Avaliacao from './screens/Avalicao';
 import Routes from './Routes';
 import { NavigationContainer } from '@react-navigation/native';
-import MarcarConsulta from './components/modalMarcarConsulta';
+import HomeStack from './Routes/stack.routes';
+// import MarcarConsulta from './components/modalMarcarConsulta';
 
 export default function App() {
   return (
+    
     <NavigationContainer>
       <Routes/>
     </NavigationContainer>
+    
     
      
   );
