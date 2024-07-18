@@ -10,10 +10,9 @@ import TreinoFeminino from '../screens/TreinoFeminino';
 import Inicio from '../screens/Inicio';
 import HomeStack from './stack.routes';
 import { NavigationContainer } from '@react-navigation/native';
-import DrawerRoutes from './drawer.routes';
 
 
-// const Drawer = createDrawerNavigator();
+const Drawer = createDrawerNavigator();
 // const Stack = createStackNavigator();
 
 // function HomeStack() {
@@ -28,30 +27,25 @@ import DrawerRoutes from './drawer.routes';
 //   );
 // }
 
-export default function Routes() {
+export default function DrawerRoutes() {
   return (
     
-      <DrawerRoutes/>
-
-    
+    <Drawer.Navigator
+      drawerContent={CustomDrawer}
+      screenOptions={{
+        drawerInactiveTintColor: 'gray',
+        drawerActiveTintColor: '#00ff',
+        drawerContentContainerStyle: {
+          alignItems: 'center',
+        },
+      }}
+    >
+      <Drawer.Screen name='Login' component= {Login} />
+      <Drawer.Screen name='Home' component= {HomeStack} />
+      <Drawer.Screen name='Avaliação' component={Avaliacao} />
+      <Drawer.Screen name='Treino Masculino' component={Training} />
+      <Drawer.Screen name='Treino Feminino' component={TreinoFeminino} />
+      <Drawer.Screen name='Cadastro' component={Cadastro} />
+    </Drawer.Navigator>
   );
 }
-
-
-    // <Drawer.Navigator
-    //   drawerContent={CustomDrawer}
-    //   screenOptions={{
-    //     drawerInactiveTintColor: 'gray',
-    //     drawerActiveTintColor: '#00ff',
-    //     drawerContentContainerStyle: {
-    //       alignItems: 'center',
-    //     },
-    //   }}
-    // >
-    //   <Drawer.Screen name='Login' component= {Login} />
-    //   <Drawer.Screen name='Home' component= {HomeStack} />
-    //   <Drawer.Screen name='Avaliação' component={Avaliacao} />
-    //   <Drawer.Screen name='Treino Masculino' component={Training} />
-    //   <Drawer.Screen name='Treino Feminino' component={TreinoFeminino} />
-    //   <Drawer.Screen name='Cadastro' component={Cadastro} />
-    // </Drawer.Navigator>
